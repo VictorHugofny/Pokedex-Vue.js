@@ -17,7 +17,7 @@
     </div>
 
     <div class="content">
-     
+        <button class="button is-medium is-fullwidth" @click = "mudarSprite">Mudar Sprite</button>
     </div>
   </div>
 </div>
@@ -58,6 +58,17 @@ export default {
         upper: function(value){ 
             let newName = value[0].toUpperCase() + value.slice(1);
             return newName
+        }
+    },
+    methods:{
+        mudarSprite: function(){
+            if(this.isFront){
+                this.isFront = false;
+                this.currentImg = this.pokemon.spriteback;
+            }else{
+                this.isFront = true;
+                this.currentImg = this.pokemon.spritefront
+            }
         }
     }
 }
