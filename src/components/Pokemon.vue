@@ -1,18 +1,17 @@
 <template>
-<div>
-  <small> </small> 
+<div id = "pokemon">
 
   <div class="card">
   <div class="card-image">
-    <figure class="image is-4by3">
-      <img :src="pokemon.spritefront" alt="Placeholder image">
+    <figure>
+      <img :src="currentImg" alt="Placeholder image">
     </figure>
   </div>
   <div class="card-content">
     <div class="media">
       
       <div class="media-content">
-        <p class="title is-4">{{name | upper}}</p>
+        <p class="title is-4">{{num}} - {{name | upper}}</p>
         <p class="subtitle is-6">{{pokemon.type}}</p>
       </div>
     </div>
@@ -33,13 +32,16 @@ export default {
       this.pokemon.type = res.data.types[0].type.name
       this.pokemon.spritefront = res.data.sprites.front_default;
       this.pokemon.spriteback = res.data.sprites.back_default;
-      console.log(this.pokemon)
+      this.currentImg = this.pokemon.spritefront
+      this.console.log(this.pokemon)
 
     }
     )},
 
     data(){
         return{
+            isFront: true,
+            currentImg: '',
             pokemon: {
                 type:"",
                 spritefront:"",
@@ -62,5 +64,7 @@ export default {
 </script>
 
 <style>
-
+#pokemon{
+    margin-top: 2%
+}
 </style>
