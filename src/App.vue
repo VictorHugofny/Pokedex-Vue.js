@@ -4,6 +4,7 @@
 
   <div class ="column is-half is-offset-one-quarter">
     <img src="./assets/logo.png" width="100px">
+    <h4>Victorhugofny</h4>
     <hr>
     <h4 class="is-size-3"> Pokedex </h4>
     <input type="text" class="input is-rounded" name="" id="buscaBtn" placeholder="Buscar pokemon pelo nome" v-model = 'busca'>
