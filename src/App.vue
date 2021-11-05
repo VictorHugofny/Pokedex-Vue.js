@@ -22,6 +22,7 @@
 import axios from "axios";
 import Pokemon from "./components/Pokemon";
 
+
 export default {
   name: 'App',
   data(){
